@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body{
+      position: relative
+      }
+      #buydiv{
+         position: absolute;
+      }
+
+
+    </style>
+    <meta charset="utf-8">
+    <title>cookie clicker</title>
+  </head>
+  <body>
+
+<div id="buydiv" style="background-color:black; color:white">
+  <h1>Shop</h1>
+<button type="button" title="bake more cookies at once" onclick="bo()" id="bob"> better oven(<div id="bopd"></div> cookies)</button><br>
+<button type="button" title="have your sister help you make cookies" onclick="sis()" id="sisb">Your sister (10 cookies)</button><br>
+<button type="button" title="close the buy menu" onclick="buym(false)">leave</button>
+<img style="float: right;"src="shopkeeper.png" alt="shopkeeper">
+</div>
+
+
+<h1>COOKIES:<div id="cd">0</div></h1>
+<button type="button" onclick="mac(0)"><img src="../cookie_ss.gif" alt="cookie"></button>
+<button type="button" onclick="mc(true)" id="musicb">music</button>
+<button type="button" onclick="mc(false)" id="smusicb" style="display: none;">stop music</button>
+<button type="button" onclick="buym(true)">buy stuff</button>
+<div id="nem" style="background-color:red; color:white;position: absolute;">
+<h1>YOU DON'T HAVE ENOUGH MONEY</h1>
+<button type="button" onclick="nmd(false)">close</button>
+</div>
+<script>
+  function nmd(a){
+    if(a){
+      document.getElementById("nem").style.display = "block";
+    }
+    else{
+      document.getElementById("nem").style.display = "none";
+    }
+  }
+  function bo(){
+
+    if (c-(200*opm)<0){
+      nmd(true)
+    }
+    else{
+      c=c-(200*opm)
+      if (cm==1){
+        cm=cm+5
+      }
+      else{
+        cm=cm+20
+      }
+
+      lv=lv+0.2
+      olv=olv+1
+      opm=opm+1.5
+    }
+    document.getElementById("bopd").innerHTML=200*opm
+    if (olv==10){
+      document.getElementById("bob").disabled = true;
+    }}
+
+    function sis(){
+      if (c<10){
+        nmd(true)
+      }
+      else{
+        c=c-10
+        cm=cm+5
+        document.getElementById("sisb").disabled = true;
+
+      }
+
+
+  }
+  function buym(a){
+    document.getElementById("bopd").innerHTML=200*opm
+    if (olv==10){
+      document.getElementById("bob").disabled = true;
+    }
+    if (a){  document.getElementById("buydiv").style.display = "block";}
+    else{
+      document.getElementById("buydiv").style.display = "none";
+      document.getElementById("cd").innerHTML = c.toString();
+    }
+
+  }
+  function mac(at){
+
+    if (at==0){
+      addccookie()
+    }
+        if (c%(25*lv)==0) {
+          oa.play()
+        }
+  document.getElementById("cd").innerHTML = c.toString();
+  }
+  function cheatedected() {
+    console.log("die cheater")
+    //window.location.href = "c.html";
+
+  }
+  function addccookie(){
+    if (c==0) {
+
+    } else {
+    tu=gtime()-lc;
+    if (tu<0.04) {
+      console.log(tu)
+      console.log(lc)
+    cheatedected();}
+
+    }
+    c=c+cm;
+    lc=gtime();
+    console.log("ff")
+  }
+  function gri(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+function mc(a){
+  if (a){
+    try{
+      document.getElementById("isound").parentNode.removeChild(isound)}
+    catch(uselessssssssssssssss){
+
+    }
+    document.getElementById("smusicb").style.display="inline-block";
+    var sl=["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/323071235&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/340840692&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/254747957&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/296041610&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/171343320&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/164916627&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/583653450&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/450047370&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/270800210&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/142758287&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/201947488&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposrts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/301459553&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"]
+    var ifrm = document.createElement("iframe");
+    ifrm.setAttribute("src", sl[gri(sl.length)]);
+    ifrm.setAttribute("id", "isound");
+    ifrm.style.width = "640px";
+    ifrm.style.height = "480px";
+    document.body.appendChild(ifrm);
+     ifrm.style.display = "none";
+     document.getElementById("musicb").innerHTML="change music"
+
+  }
+  else{
+    document.getElementById("isound").parentNode.removeChild(isound)
+    document.getElementById("smusicb").style.display="none";
+  }
+
+}
+
+
+  function gtime(){
+    var time = new Date();
+    return time.getTime();
+  }
+  var lc=gtime();
+  var c=0;
+  var olv=0;
+  var opm=1;
+  var lv=1;
+  var cm=1;
+  var oa = new Audio('../oven_door.mp3');
+  document.getElementById("buydiv").style.display = "none";
+  document.getElementById("nem").style.display = "none";
+</script>
+  </body>
+</html>
