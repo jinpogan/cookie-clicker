@@ -3,7 +3,8 @@
   <head>
     <style>
       body{
-      position: relative
+      position: relative;
+      background-image:url("oc.jpg")
       }
       #buydiv{
          position: absolute;
@@ -18,6 +19,7 @@
 
 <div id="buydiv" style="background-color:black; color:white">
   <h1>Shop</h1>
+<button type="button" title="legal autoclicker" onclick="s()" id="sb">mouse1</button><br>
 <button type="button" title="bake more cookies at once" onclick="s()" id="sb">a store(10000 cookies)</button><br>
 <button type="button" title="bake more cookies at once" onclick="bo()" id="bob"> better oven(<div id="bopd"></div> cookies)</button><br>
 <button type="button" title="have your sister help you make cookies" onclick="sis()" id="sisb">Your sister (10 cookies)</button><br>
@@ -29,6 +31,7 @@
 <h1>COOKIES:<div id="cd">0</div></h1>
 <button type="button" onclick="mac(0)"><img src="../cookie_ss.gif" alt="cookie"></button>
 <button type="button" onclick="mc(true)" id="musicb">music</button>
+<button type="button" onclick="document.getElementById('shmusicb').style.display='none';document.getElementById('isound').style.display='inline-elements'" id="shmusicb">show/hide music</button>
 <button type="button" onclick="mc(false)" id="smusicb" style="display: none;">stop music</button>
 <button type="button" onclick="buym(true)">buy stuff</button>
 <div id="nem" style="background-color:red; color:white;position: absolute;">
@@ -111,12 +114,17 @@
     }
         if (c%(25*lv)==0) {
           oa.play()
+          document.body.style.backgroundImage="url('oo.jpg')";
+          setTimeout(function(){
+              document.body.style.backgroundImage="url('oc.jpg')";
+          }, 2500);
         }
   document.getElementById("cd").innerHTML = c.toString();
   }
   function cheatedected() {
     console.log("die cheater")
-    //window.location.href = "c.html";
+    window.location.href = "c.html";
+;
 
   }
   function addccookie(){
@@ -145,7 +153,9 @@ function mc(a){
 
     }
     document.getElementById("smusicb").style.display="inline-block";
-    var sl=["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/323071235&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/340840692&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/254747957&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/296041610&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/171343320&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/164916627&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/583653450&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/450047370&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/270800210&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/142758287&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/201947488&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposrts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/301459553&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"]
+    var sl=["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/323071235&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/340840692&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/254747957&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/296041610&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/171343320&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/164916627&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/583653450&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/450047370&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/270800210&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/142758287&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/201947488&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposrts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/301459553&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/344596334&color=%23e8bce4&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/510738942&color=%23e8bce4&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://www.youtube.com/watch?v=QiFBgtgUtfw"]
+    var sl=["https://www.youtube.com/embed/QiFBgtgUtfw?autoplay=1"]
+
     var ifrm = document.createElement("iframe");
     ifrm.setAttribute("src", sl[gri(sl.length)]);
     ifrm.setAttribute("id", "isound");
@@ -168,6 +178,7 @@ function mc(a){
     var time = new Date();
     return time.getTime();
   }
+
   var lc=gtime();
   var c=0;
   var olv=0;
