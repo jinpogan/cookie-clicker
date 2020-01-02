@@ -18,6 +18,7 @@
 
 <div id="buydiv" style="background-color:black; color:white">
   <h1>Shop</h1>
+<button type="button" title="bake more cookies at once" onclick="s()" id="sb">a store(10000 cookies)</button><br>
 <button type="button" title="bake more cookies at once" onclick="bo()" id="bob"> better oven(<div id="bopd"></div> cookies)</button><br>
 <button type="button" title="have your sister help you make cookies" onclick="sis()" id="sisb">Your sister (10 cookies)</button><br>
 <button type="button" title="close the buy menu" onclick="buym(false)">leave</button>
@@ -65,6 +66,18 @@
     if (olv==10){
       document.getElementById("bob").disabled = true;
     }}
+
+    function s(){
+
+      if (c-10000<0){
+        nmd(true)
+      }
+      else{
+        c=c-10000
+        cm=cm+300
+
+        lv=lv+2
+      }}
 
     function sis(){
       if (c<10){
@@ -140,7 +153,7 @@ function mc(a){
     ifrm.style.height = "480px";
     document.body.appendChild(ifrm);
      ifrm.style.display = "none";
-     document.getElementById("musicb").innerHTML="change music"
+     document.getElementById("musicb").innerHTML="start/change music"
 
   }
   else{
