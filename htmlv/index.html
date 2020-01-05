@@ -29,7 +29,7 @@
 <button type="button" title="watch games" onclick="cbc(-1)" id="cb">Chrome Book(250 cookies)<br><img src="cb.jpg"></button><button type="button" title="bake more cookies at once" onclick="store()" id="sb">a store(20000 cookies)<br><img src="s.png" alt=""></button>
 <br>
 <button type="button" title="have your sister help you make cookies" onclick="sis()" id="sisb">Your sister👩 (10 cookies)<br><img src="sis.png" alt="sister"> </button><button type="button" title="make cookie by itsself" onclick="scookiem()" >Small Cookie maker🤖️(<span id="sbpd"></span> cookies)</button>
-<br>
+<br><button type="button" title="make cookie by itsself" onclick="mcookiem()" >Medium Cookie maker🤖️(<span id="mbpd"></span> cookies)</button><button type="button" title="make cookie by itsself" onclick="bcookiem()" >Large Cookie maker🤖️(<span id="bbpd"></span> cookies)</button>
 <button type="button" title="close the buy menu" onclick="buym(false)">leave</button>
 <img style="float: right;"src="shopkeeper.png" alt="shopkeeper">
 </div>
@@ -84,6 +84,40 @@ if (document.getElementById('isound').style.display == 'none') {
 
       }
       document.getElementById("sbpd").innerHTML=200*sbpm
+
+  }
+  function bcookiem(){
+      if (c-(6000*bbpm)<0){
+        nmd(true)
+      }
+      else{
+        if (bblv==0 && car == false){
+            ca()
+        }
+        bblv=bblv+400
+        c=c-(6000*bbpm)
+        lv=lv+1
+        bbpm=bbpm+bbpm/4
+
+      }
+      document.getElementById("bbpd").innerHTML=6000*bbpm
+
+  }
+  function mcookiem(){
+      if (c-(500*mbpm)<0){
+        nmd(true)
+      }
+      else{
+        if (mblv==0 && car == false){
+            ca()
+        }
+        mblv=mblv+40
+        c=c-(500*mbpm)
+        lv=lv+1
+        mbpm=mbpm+mbpm/4
+
+      }
+      document.getElementById("mbpd").innerHTML=500*mbpm
 
   }
   function store(){
@@ -201,6 +235,8 @@ function cbc(a){
     }
     document.getElementById("apd").innerHTML=20*apm
     document.getElementById("sbpd").innerHTML=200*sbpm
+      document.getElementById("mbpd").innerHTML=500*mbpm
+            document.getElementById("bbpd").innerHTML=6000*bbpm
     if (a){  document.getElementById("buydiv").style.display = "block";}
     else{
       document.getElementById("buydiv").style.display = "none";
@@ -222,6 +258,7 @@ function cbc(a){
           setTimeout(function(){
               document.body.style.backgroundImage="url('cbg.jpg')";
           }, 3500);
+
           setTimeout(function(){
               document.body.style.backgroundImage="url('oc.jpg')";
           }, 6500);
@@ -255,7 +292,7 @@ function cbc(a){
 async function ca(){
   car=true
   while(true){
-    c=c+alv+sblv
+    c=c+alv+sblv+mblv+bblv
    document.getElementById("cd").innerHTML = c.toString();
    await new Promise(r => setTimeout(r, 1000));
   }
@@ -272,9 +309,8 @@ function mc(a){
     document.getElementById("smusicb").style.display="inline-block";
     document.getElementById("shmusicb").style.display="inline-block";
 
-    var sl=["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/323071235&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/340840692&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/254747957&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/296041610&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/171343320&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/164916627&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/583653450&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/450047370&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/270800210&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/142758287&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/201947488&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposrts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/301459553&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/344596334&color=%23e8bce4&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/510738942&color=%23e8bce4&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://www.youtube.com/watch?v=QiFBgtgUtfw","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/437764107&color=%23e8bce4&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/720608434&color=%235c5c7c&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/20863566&color=%23cef6ad&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/134318106&color=%2318281d&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://www.youtube.com/embed/oZ0-Dde8cMU"]
-
-
+    var sl=["https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/323071235&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/340840692&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/254747957&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/296041610&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/171343320&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/164916627&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/583653450&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/450047370&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/270800210&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/142758287&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/201947488&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposrts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/301459553&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/344596334&color=%23e8bce4&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",,"https://www.youtube.com/watch?v=QiFBgtgUtfw?autoplay=1","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/437764107&color=%23e8bce4&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/720608434&color=%235c5c7c&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/20863566&color=%23cef6ad&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/134318106&color=%2318281d&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",,"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/522304485&color=%2318281d&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/228833298&color=%2318281d&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/225073180&color=%2318281d&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/373227848&color=%2318281d&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/708280165&color=%2318281d&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://www.youtube.com/embed/9aQV5Xwg7bU?autoplay=1","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/683416565&color=%237c649c&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/438080691&color=%23181c20&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/438076239&color=%23181c20&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/438076239&color=%23181c20&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/438076239&color=%23181c20&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/438076239&color=%23181c20&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/238320652&color=%23c86c7f&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/280338081&color=%23c86c7f&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/223659436&color=%23c86c7f&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true","https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/360169493&color=%23c86c7f&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"]
+/*"https://www.youtube.com/embed/oZ0-Dde8cMU?autoplay=1""https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/510738942&color=%23e8bce4&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"*/
     var ifrm = document.createElement("iframe");
     ifrm.setAttribute("src", sl[gri(sl.length)]);
     ifrm.setAttribute("id", "isound");
@@ -305,8 +341,12 @@ function mc(a){
   var opm=1;
   var apm=1;
   var sbpm=1;
+  var mbpm=1;
+  var bbpm=1;
   var car=false;
   var sblv=0;
+  var mblv=0;
+  var bblv=0;
   var alv=0;
   var lv=1;
   var cm=1;
