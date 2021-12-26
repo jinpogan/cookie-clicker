@@ -401,7 +401,12 @@ function loaddata(){
                   lv=data["lv"];
                   cm=data["cm"];
                   document.getElementById("sisb").disabled=data["sisbdisabled"];
-                  document.getElementById("cb").disabled=data["cbdisabled"];
+                  //document.getElementById("cb").disabled=data["cbdisabled"];
+                  //document.getElementById("cbb").style.display="block";
+                  if (data[cbdisabled]=false){
+                      c=c+250
+                      cbc(-1)
+                  }
                   document.getElementById("bob").disabled=data["bob"];
                   if (car){
                     ca();
